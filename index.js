@@ -1,19 +1,18 @@
-function* gen(rounds) {
-  let i = 0;
+function* gen({
+  exerciseSeconds,
+  exerciseRestSeconds,
+  rounds,
+  roundRestSeconds,
+  exercises: exercisesRaw,
+}) {
+  const exercises = exercisesRaw
+    .split("\n")
+    .map((s) => s.trim())
+    .filter(Boolean)
 
-  while (i++ < rounds) {
-    yield i;
+  for (exercise of exercises) {
+    yield { exercise }
   }
 }
 
-const engine = gen(5);
-let current = engine.next();
-
-const interval = setInterval(() => {
-  if (!current.done) {
-    console.log(current.value);
-    current = engine.next();
-  } else {
-    clearInterval(interval);
-  }
-}, 1000);
+module.exports = gen

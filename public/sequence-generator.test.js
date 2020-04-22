@@ -1,4 +1,4 @@
-const sequenceGenerator = require(".")
+const sequenceGenerator = require("./sequence-generator")
 
 describe("sequence", () => {
   it("works", () => {

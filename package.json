@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "ci": "jest",
+    "test": "jest --watch",
+    "deploy": "gh-pages -d public"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jest": "^25.4.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }

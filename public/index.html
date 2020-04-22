@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Rounder</title>
+  </head>
+
+  <body>
+    <h1>Rounder</h1>
+    <form action="timer.html" method="GET">
+      <label for="rounds">Rounds:</label>
+      <input
+        type="number"
+        id="rounds"
+        name="rounds"
+        required
+        min="1"
+        max="100"
+        value="4"
+      />
+
+      <label for="exerciseSeconds">Seconds on:</label>
+      <input
+        type="number"
+        id="exerciseSeconds"
+        name="exerciseSeconds"
+        required
+        min="1"
+        max="100"
+        value="40"
+      />
+      <label for="exerciseRestSeconds">Seconds off:</label>
+      <input
+        type="number"
+        id="exerciseRestSeconds"
+        name="exerciseRestSeconds"
+        required
+        min="1"
+        max="100"
+        value="20"
+      />
+      <p>
+        <label for="roundRestSeconds">Round Rest:</label>
+        <input
+          type="number"
+          id="roundRestSeconds"
+          name="roundRestSeconds"
+          required
+          min="1"
+          max="100"
+          value="60"
+        />
+      </p>
+      <p>
+        <label for="exercises">Exercises:</label>
+
+        <textarea id="exercises" name="exercises" rows="8">
+1: Lunge
+2: Jumpsquat
+3: Starjumps
+4: Mountain climbers
+5: Burpees
+        </textarea>
+      </p>
+      <p>
+        <button class="go_workout">
+          Let's do this!
+        </button>
+      </p>
+    </form>
+  </body>
+</html>

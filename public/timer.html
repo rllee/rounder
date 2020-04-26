@@ -3,28 +3,48 @@
     <title>timer</title>
   </head>
   <body>
-    <h1>Xsecs</h1>
+    <h1 id="secondsRemaining">secondsRemaining</h1>
     <h2 id="exercise">exercise</h2>
     <p>
-      <button class="play" type="button">
-        Start
-      </button>
-    </p>
-    <p>
-      <button class="pause" type="button">
+      <button type="button">
         Pause
       </button>
     </p>
     <p>
-      <button class="restart" type="button">
+      <button type="button">
+        Start
+      </button>
+    </p>
+    <p>
+      <button type="button">
         Restart
       </button>
     </p>
 
+    <script src="sequence-generator.js"></script>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const firstExercise = urlParams.get("exercises").split("\n")[0];
-      document.getElementById("exercise").textContent = firstExercise;
+
+      const options = {
+        exerciseSeconds: urlParams.get("exerciseSeconds"),
+        exerciseRestSeconds: urlParams.get("exerciseRestSeconds"),
+        rounds: urlParams.get("rounds"),
+        roundRestSeconds: urlParams.get("roundRestSeconds"),
+        exercises: urlParams.get("exercises"),
+      };
+
+      const sequence = sequenceGenerator(options);
+
+      const render = () => {
+        displayData = sequence.next().value;
+
+        document.getElementById("exercise").textContent = displayData.exercise;
+        document.getElementById("secondsRemaining").textContent =
+          displayData.secondsRemaining;
+      };
+
+      render();
+      setInterval(render, 1000);
     </script>
   </body>
 </html>

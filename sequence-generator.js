@@ -8,13 +8,13 @@ function* sequenceGenerator({
   roundRestSeconds,
   exercises: exercisesRaw,
 }) {
-  let secondsElapsed = 0
-  let round = 0
+  let secondsElapsed = 0;
+  let round = 0;
 
   const exercises = exercisesRaw
     .split("\n")
     .map((s) => s.trim())
-    .filter(Boolean)
+    .filter(Boolean);
 
   while (round < rounds) {
     for (exercise of exercises) {
@@ -24,10 +24,10 @@ function* sequenceGenerator({
           exercise,
           totalSeconds: exerciseSeconds,
           secondsRemaining: exerciseSeconds - secondsElapsed,
-        }
-        secondsElapsed++
+        };
+        secondsElapsed++;
       }
-      secondsElapsed = 0
+      secondsElapsed = 0;
 
       // exercise rest
       if (exercise !== exercises[exercise.length - 1]) {
@@ -36,14 +36,14 @@ function* sequenceGenerator({
             exercise: "rest",
             totalSeconds: exerciseRestSeconds,
             secondsRemaining: exerciseRestSeconds - secondsElapsed,
-          }
-          secondsElapsed++
+          };
+          secondsElapsed++;
         }
-        secondsElapsed = 0
+        secondsElapsed = 0;
       }
     }
 
-    round++
+    round++;
 
     // round rest
     if (round < rounds) {
@@ -52,22 +52,12 @@ function* sequenceGenerator({
           exercise: "rest",
           totalSeconds: roundRestSeconds,
           secondsRemaining: roundRestSeconds - secondsElapsed,
-        }
-        secondsElapsed++
+        };
+        secondsElapsed++;
       }
-      secondsElapsed = 0
+      secondsElapsed = 0;
     }
   }
 }
 
-// const s = sequenceGenerator({
-//   exerciseSeconds: 2,
-//   exerciseRestSeconds: 3,
-//   rounds: 3,
-//   roundRestSeconds: 5,
-//   exercises: "foo",
-// })
-
-// setInterval(() => console.log(s.next().value), 1000)
-
-module.exports = sequenceGenerator
+window.sequenceGenerator = sequenceGenerator;

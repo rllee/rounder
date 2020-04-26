@@ -2,23 +2,29 @@
   <head>
     <title>timer</title>
   </head>
+  <body>
+    <h1>Xsecs</h1>
+    <h2 id="exercise">exercise</h2>
+    <p>
+      <button class="play" type="button">
+        Start
+      </button>
+    </p>
+    <p>
+      <button class="pause" type="button">
+        Pause
+      </button>
+    </p>
+    <p>
+      <button class="restart" type="button">
+        Restart
+      </button>
+    </p>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const firstExercise = urlParams.get("exercises").split("\n")[0];
+      document.getElementById("exercise").textContent = firstExercise;
+    </script>
+  </body>
 </html>
-<body>
-  <h1>Xsecs</h1>
-  <h2>Lunge</h2>
-  <p>
-    <button class="play" type="button">
-      Start
-    </button>
-  </p>
-  <p>
-    <button class="pause" type="button">
-      Pause
-    </button>
-  </p>
-  <p>
-    <button class="restart" type="button">
-      Restart
-    </button>
-  </p>
-</body>

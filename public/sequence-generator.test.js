@@ -1,4 +1,5 @@
-const sequenceGenerator = require("./sequence-generator")
+require("./sequence-generator")
+const { sequenceGenerator } = window
 
 describe("sequence", () => {
   it("works", () => {

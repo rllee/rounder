@@ -30,7 +30,7 @@ function* sequenceGenerator({
       secondsElapsed = 0;
 
       // exercise rest
-      if (exercise !== exercises[exercise.length - 1]) {
+      if (exercise !== exercises[exercises.length - 1]) {
         while (secondsElapsed < exerciseRestSeconds) {
           yield {
             exercise: "rest",

@@ -1,0 +1,34 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Rubik", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 30;
+  font-size: 45;
+  margin-bottom: 0px;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20;
+  font-size: 80;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.general_button {
+  background-color: darkcyan;
+  font-size: 20;
+  border: none;
+  padding: 10;
+  margin: 20;
+  border-radius: 10px;
+}
+
+button {
+  font-family: "Rubik", sans-serif;
+}

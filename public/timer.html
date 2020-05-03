@@ -1,25 +1,27 @@
 <html>
   <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>timer</title>
   </head>
   <body>
-    <h1 id="secondsRemaining">secondsRemaining</h1>
-    <h2 id="exercise">exercise</h2>
-    <p>
-      <button type="button">
+    <div class="container">
+      <h2 id="exercise">exercise</h2>
+      <h1 id="secondsRemaining">40</h1>
+      <button class="general_button" type="button">
         Pause
       </button>
-    </p>
-    <p>
-      <button type="button">
+      <button class="general_button" type="button">
         Start
       </button>
-    </p>
-    <p>
-      <button type="button">
-        Restart
+      <button class="general_button" type="button">
+        Reset
       </button>
-    </p>
+    </div>
 
     <script src="sequence-generator.js"></script>
     <script>

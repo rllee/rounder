@@ -33,7 +33,7 @@ function* sequenceGenerator({
       if (exercise !== exercises[exercises.length - 1]) {
         while (secondsElapsed < exerciseRestSeconds) {
           yield {
-            exercise: "rest",
+            exercise: "Rest",
             totalSeconds: exerciseRestSeconds,
             secondsRemaining: exerciseRestSeconds - secondsElapsed,
           };
@@ -49,7 +49,7 @@ function* sequenceGenerator({
     if (round < rounds) {
       while (secondsElapsed < roundRestSeconds) {
         yield {
-          exercise: "rest",
+          exercise: "Rest",
           totalSeconds: roundRestSeconds,
           secondsRemaining: roundRestSeconds - secondsElapsed,
         };
